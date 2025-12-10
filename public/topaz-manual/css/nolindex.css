@@ -1,0 +1,21 @@
+body{background-color:#fffddd; 
+     padding:0 8px 0 3px;
+     font: 11px Arial, Helvetica, sans-serif; color:#333;}
+
+  h1{font-size: 41px; color: #c87; margin: 10px 0 15px 12px;}
+
+ .copyright{text-align:center;}
+
+#navigation {width: 233px; margin: 0px 0px 5px; padding:10px 0; 
+             background-color:#ffd7b7; font-size:12px;}
+
+ a {display: block; height:18px; padding: 4px 7px 0 15px;}
+
+ .sub {margin-left: 15px;}
+ .now {font-weight:bold; color:navy; }
+
+ a:link, a:visited{text-decoration: none;}
+
+ a:visited {color:#333;}
+ a:hover   {background-color: #fffddd;}
+ a:active  {background-color: #fca; color: #333;}

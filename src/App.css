@@ -1,0 +1,478 @@
+/* =========================================================
+   GLOBAL – DARK BLUE / GRAY THEME
+   ========================================================= */
+
+:root {
+  /* Palette */
+  --navy-deep: #020617;     /* almost black navy */
+  --navy-mid: #0f172a;      /* deep blue */
+  --navy-soft: #1e293b;     /* slate/blue */
+  --gray-bg: #111827;       /* dark background */
+  --gray-surface: #1f2933;  /* card background */
+  --gray-soft: #e5e7eb;     /* light gray text/borders */
+  --accent-blue: #38bdf8;   /* cyan accent */
+  --accent-blue-soft: #93c5fd;
+
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+
+  --border: rgba(148, 163, 184, 0.4);
+  --radius: 16px;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.45);
+}
+
+/* Page layout */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
+  color: var(--text-main);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 3rem;
+}
+
+/* Main app container */
+
+.app-container {
+  background: radial-gradient(circle at top left, #0b1120, #020617 65%, #020617);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 2.1rem 2.3rem 2.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #e5e7eb, #38bdf8, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   TOP TABS
+   ========================================================= */
+
+.main-tabs {
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.2rem;
+}
+
+.main-tabs button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.main-tabs button.active {
+  background: linear-gradient(135deg, #1f2937, #38bdf8);
+  color: #e5e7eb;
+  box-shadow: var(--shadow-soft);
+}
+
+.main-tabs button:not(.active):hover {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+/* Player tabs */
+
+.player-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.player-tabs button {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.player-tabs button.active {
+  background: linear-gradient(135deg, #111827, #38bdf8);
+  color: #f9fafb;
+  border-color: transparent;
+  box-shadow: var(--shadow-soft);
+}
+
+.player-tabs button:not(.active):hover {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+/* =========================================================
+   PANELS & GRID
+   ========================================================= */
+
+.panel {
+  margin-top: 0.4rem;
+  padding: 1.5rem 1.5rem 1.8rem;
+  background: radial-gradient(circle at top left, #020617, #020617 65%, #020617);
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  text-align: left;
+}
+
+.panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  color: #e5e7eb;
+}
+
+.panel h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+
+.panel h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.top-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.top-summary-col {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.86rem;
+}
+
+/* Main decisions grid */
+
+.decisions-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: 1.1rem;
+}
+
+.decision-card {
+  background: radial-gradient(circle at top left, #020617, #020617 70%, #020617);
+  border-radius: 18px;
+  padding: 0.9rem 1rem 1rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+/* Inputs */
+
+.field-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(75, 85, 99, 0.9);
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  background: #020617;
+  color: #e5e7eb;
+  transition: all 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.55);
+  background: #020617;
+}
+
+/* =========================================================
+   TABLE STYLE
+   ========================================================= */
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+}
+
+.table th,
+.table td {
+  padding: 0.45rem 0.55rem;
+  text-align: left;
+}
+
+.table th {
+  background: #020617;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.9);
+  color: #e5e7eb;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: #020617;
+}
+
+.table tbody tr:nth-child(odd) td {
+  background: #020617;
+}
+
+.table tbody tr:hover td {
+  background: #0f172a;
+}
+
+/* =========================================================
+   BULK PASTE AREA
+   ========================================================= */
+
+.bulk-paste {
+  margin-top: 1rem;
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, #0f172a, #020617 80%);
+  border: 1px dashed rgba(56, 189, 248, 0.7);
+  padding: 0.8rem;
+}
+
+.bulk-paste textarea {
+  margin-top: 0.5rem;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* =========================================================
+   KPI CARDS & CHART AREA
+   ========================================================= */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.kpi-card {
+  background: radial-gradient(circle at top left, #111827, #020617);
+  border-radius: 18px;
+  padding: 0.75rem 0.9rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+.kpi-card::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent);
+}
+
+.kpi-card h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.kpi-main {
+  margin: 0.3rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.kpi-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-card {
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border-radius: 18px;
+  padding: 0.85rem 0.9rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+.chart-container {
+  margin-top: 1.4rem;
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border-radius: 18px;
+  padding: 1rem 1rem 0.6rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+/* =========================================================
+   NEWS BOX
+   ========================================================= */
+
+.market-news {
+  margin-top: 1.1rem;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(56, 189, 248, 0.6);
+}
+
+.market-news h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-btn {
+  padding: 0.65rem 1.7rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #020617;
+  background: linear-gradient(135deg, #38bdf8, #93c5fd);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.18s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.primary-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.secondary-btn {
+  margin-top: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  background: radial-gradient(circle at top left, #020617, #020617);
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.secondary-btn:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================================================
+   RESULTS HEADER ROW
+   ========================================================= */
+
+.results-header-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.9rem;
+  gap: 1.1rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  #root {
+    padding: 1.2rem;
+  }
+
+  .app-container {
+    padding: 1.4rem 1.3rem 1.7rem;
+  }
+
+  .decisions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+}
